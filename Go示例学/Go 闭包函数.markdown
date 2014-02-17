@@ -2,6 +2,8 @@
 
 Go支持匿名函数，匿名函数可以形成闭包。闭包函数可以访问定义闭包的函数定义的内部变量。
 
+示例1：
+
 ```go
 package main
 
@@ -41,4 +43,66 @@ func main() {
 2
 3
 1
+```
+示例2：
+
+```go
+
+package main
+
+import "fmt"
+
+func main() {
+	add10 := closure(10)//其实是构造了一个加10函数
+	fmt.Println(add10(5))
+	fmt.Println(add10(6))
+	add20 := closure(20)
+	fmt.Println(add20(5))
+}
+
+func closure(x int) func(y int) int {
+	return func(y int) int {
+		return x + y
+	}
+
+}
+
+```
+
+输出结果为：
+```
+15
+16
+25
+```
+示例3：
+```go
+
+package main
+
+import "fmt"
+
+func main() {
+
+	var fs []func() int
+
+	for i := 0; i < 3; i++ {
+
+		fs = append(fs, func() int {
+
+			return i
+		})
+	}
+	for _, f := range fs {
+		fmt.Printf("%p = %v\n", f, f())
+	}
+}
+
+```
+
+输出结果：
+```
+0x401200 = 3
+0x401200 = 3
+0x401200 = 3
 ```
