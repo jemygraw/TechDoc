@@ -50,7 +50,7 @@ https://github.com/itfan/TechDoc/blob/master/Go%E8%BD%BB%E6%9D%BE%E5%AD%A6/go_tu
 
   ----------
   
-#JAVA
+#Java
 
   ----------
 
