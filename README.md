@@ -21,8 +21,7 @@
  9. [第九节 并行计算][9]
  10. [第十节 使用包和测试][10]
 
-##Go实例学
-
+##Go示例学
 
   [1]: https://github.com/itfan/TechDoc/blob/master/Go%E8%BD%BB%E6%9D%BE%E5%AD%A6/go_tutorial_1_how_to_install_go.md
   [2]: https://github.com/itfan/TechDoc/blob/master/Go%E8%BD%BB%E6%9D%BE%E5%AD%A6/go_tutorial_2_data_type.md
