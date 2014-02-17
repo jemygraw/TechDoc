@@ -1,4 +1,6 @@
-在此，我们有各种编程语言的入门教程，让你在最短的时间内上手一门语言。
+多科学堂
+
+在此，有多种编程语言的入门教程，让你在最短的时间内上手一门语言。
 
 目前正在进行中的是 **Go Python Java Nodejs**
 
@@ -41,3 +43,15 @@ https://github.com/itfan/TechDoc/blob/master/Go%E8%BD%BB%E6%9D%BE%E5%AD%A6/go_tu
  [10]:
 https://github.com/itfan/TechDoc/blob/master/Go%E8%BD%BB%E6%9D%BE%E5%AD%A6/go_tutorial_10_use_package_test.md
   [11]: https://github.com/itfan/TechDoc/blob/master/Go%E8%BD%BB%E6%9D%BE%E5%AD%A6/go_tutorial_0_what_to_learn.md
+  
+----------
+
+# Python
+
+  ----------
+  
+#JAVA
+
+  ----------
+
+#Nodejs
