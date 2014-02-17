@@ -1,4 +1,4 @@
-```go
+锘縛``go
 package main
 
 import "fmt"
@@ -11,7 +11,7 @@ func main() {
 }
 
 func test(x, y int, callback Callback) int {
-//提供一个接口，让外部去实现，在javascript中很常见
+//鎻愪緵涓�涓帴鍙ｏ紝璁╁閮ㄥ幓瀹炵幇锛屽湪javascript涓緢甯歌
 
 	return callback(x, y)
 }
