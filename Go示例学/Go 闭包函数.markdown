@@ -106,3 +106,38 @@ func main() {
 0x401200 = 3
 0x401200 = 3
 ```
+示例4：
+```go
+package main
+
+import "fmt"
+
+func adder() func(int) int {
+	sum := 0
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
+func main() {
+	result := adder()
+	for i := 0; i < 10; i++ {
+		fmt.Println(result(i))
+	}
+}
+```
+
+输出结果为：
+```
+0
+1
+3
+6
+10
+15
+21
+28
+36
+45
+```
