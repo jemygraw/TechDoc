@@ -2,6 +2,7 @@
 
 切片是Go语言的关键类型之一，它提供了比数组更多的功能。
 
+示例1：
 ```go
 package main
 
@@ -90,3 +91,108 @@ dcl: [g h i]
 ```
 
 数组和切片的定义方式的区别在于`[]`之中是否有`固定长度`或者推断长度标志符`...`。
+
+示例2：
+```go
+package main
+
+import "fmt"
+
+func main() {
+	s1 := make([]int, 0)
+	test(s1)
+	fmt.Println(s1)
+}
+
+func test(s []int) {
+	s = append(s, 3)
+	//因为原来分配的空间不够，所以在另外一个地址又重新分配了空间，所以原始地址的数据没有变
+}
+
+```
+输出结果为：
+```
+[]
+```
+若改为：
+```go
+
+package main
+
+import "fmt"
+
+func main() {
+	s1 := make([]int, 0)
+	s1 = test(s1)
+	fmt.Println(s1)
+}
+
+func test(s []int) []int {
+	s = append(s, 3)
+	return s
+}
+```
+
+输出结果为：
+```
+[3]//正确结果
+```
+示例3：
+
+cap是slice的最大容量，append函数添加元素，如果超过原始slice的容量，会重新分配底层数组。
+```
+package main
+
+import "fmt"
+
+func main() {
+	s1 := make([]int, 3, 6)
+	fmt.Println("s1= ", s1, len(s1), cap(s1))
+	s2 := append(s1, 1, 2, 3)
+	fmt.Println("s1= ", s1, len(s1), cap(s1))
+	fmt.Println("s2= ", s2, len(s2), cap(s2))
+	s3 := append(s2, 4, 5, 6)
+	fmt.Println("s1= ", s1, len(s1), cap(s1))
+	fmt.Println("s2= ", s2, len(s2), cap(s2))
+	fmt.Println("s3= ", s3, len(s3), cap(s3))
+
+}
+```
+输出结果为：
+```
+s1=  [0 0 0] 3 6
+s1=  [0 0 0] 3 6
+s2=  [0 0 0 1 2 3] 6 6
+s1=  [0 0 0] 3 6
+s2=  [0 0 0 1 2 3] 6 6
+s3=  [0 0 0 1 2 3 4 5 6] 9 12
+```
+示例4：
+
+指向同一底层数组的slice之间copy时，允许存在重叠。copy数组时，受限于src和dst数组的长度最小值。
+```go
+package main
+
+import "fmt"
+
+func main() {
+	s1 := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+	s2 := make([]int, 3, 20)
+	var n int
+	n = copy(s2, s1)
+	fmt.Println(n, s2, len(s2), cap(s2))
+
+	s3 := s1[4:6]
+	fmt.Println(n, s3, len(s3), cap(s3))
+
+	n = copy(s3, s1[1:5])
+	fmt.Println(n, s3, len(s3), cap(s3))
+}
+
+```
+输出结果：
+```
+3 [0 1 2] 3 20
+3 [4 5] 2 6
+2 [1 2] 2 6
+```
