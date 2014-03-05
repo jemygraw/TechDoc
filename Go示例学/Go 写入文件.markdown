@@ -56,7 +56,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 wrote 5 bytes
 wrote 7 bytes
 wrote 9 bytes

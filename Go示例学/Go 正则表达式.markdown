@@ -71,7 +71,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 true
 true
 peach

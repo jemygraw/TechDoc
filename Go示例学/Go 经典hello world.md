@@ -10,7 +10,7 @@ func main() {
 }
 ```
 输出结果为：
-```go
+```
 $ ls
 el_01_hello_world.go
 $ go build el_01_hello_world.go 

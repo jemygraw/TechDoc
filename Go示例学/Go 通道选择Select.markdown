@@ -35,7 +35,7 @@ func main() {
 }
 ```
 输出结果
-```go
+```
 received one
 received two
 ```

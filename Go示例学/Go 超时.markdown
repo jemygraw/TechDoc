@@ -43,7 +43,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 timeout 1
 result 2
 ```

@@ -34,7 +34,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 hello world
 HELLO WORLD
 how are you

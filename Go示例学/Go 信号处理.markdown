@@ -36,7 +36,7 @@ func main() {
 }
 ```
 当运行程序的时候，程序将阻塞等待信号的到来，我们可以使用`CTRL+C`来发送一个`SIGINT`信号，这样程序就会输出interrupt后退出。
-```go
+```
 awaiting signal
 
 interrupt

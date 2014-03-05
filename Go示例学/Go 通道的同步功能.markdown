@@ -32,7 +32,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 working...done
 ```
 如果我们从main函数里面移除`<-done`语句，那么main函数在worker协程开始运行之前就结束了。

@@ -23,7 +23,7 @@ func main() {
 }
 ```
 在运行该程序的时候，需要首先用`go build`将代码编译为可执行文件，然后提供足够数量的参数。例如
-```go
+```
 $ go build command-line-arguments.go
 $ ./command-line-arguments a b c d
 [./command-line-arguments a b c d]       

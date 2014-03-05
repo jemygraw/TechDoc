@@ -44,7 +44,7 @@ func main() {
 
 输出结果为
 
-```go
+```
 {Bob 20}
 {Alice 30}
 {Fred 0}

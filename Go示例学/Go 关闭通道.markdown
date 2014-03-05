@@ -42,7 +42,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 sent job 1
 received job 1
 sent job 2

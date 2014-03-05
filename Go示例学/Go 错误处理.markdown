@@ -73,7 +73,7 @@ func main() {
 }
 ```
 运行结果为
-```go
+```
 f1 worked: 10
 f1 failed: can't work with 42
 f2 worked: 10

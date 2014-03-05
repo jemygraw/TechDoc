@@ -43,14 +43,14 @@ func main() {
 }
 ```
 为了运行示例，你需要先将程序编译为可执行文件。
-```go
+```
 go build command-line-flags.go
 ```
 下面分别看看给予该命令行程序不同选项参数的例子：
 
 (1) 给所有的选项设置一个参数
 
-```go
+```
 $ ./command-line-flags -word=opt -numb=7 -fork -svar=flag
 word: opt
 numb: 7
@@ -59,7 +59,7 @@ svar: flag
 tail: []
 ```
 (2) 如果你不设置flag，那么它们自动采用默认的值
-```go
+```
 $ ./command-line-flags -word=opt
 word: opt
 numb: 42
@@ -68,7 +68,7 @@ svar: bar
 tail: []
 ```
 (3) 尾部的位置参数可以出现在任意一个flag后面
-```go
+```
 $ ./command-line-flags -word=opt a1 a2 a3
 word: opt
 numb: 42
@@ -77,7 +77,7 @@ svar: bar
 tail: [a1 a2 a3]
 ```
 (4) 注意flag包要求所有的flag都必须出现在尾部位置参数的前面，否则这些flag将被当作位置参数处理
-```go
+```
 $ ./command-line-flags -word=opt a1 a2 a3 -numb=7
 word: opt
 numb: 42
@@ -86,7 +86,7 @@ svar: bar
 trailing: [a1 a2 a3 -numb=7]
 ```
 (5) 使用`-h`或者`--help`这两个flag来自动地生成命令行程序的帮助信息
-```go
+```
 $ ./command-line-flags -h
 Usage of ./command-line-flags:
   -fork=false: a bool
@@ -95,7 +95,7 @@ Usage of ./command-line-flags:
   -word="foo": a string
 ```
 (6) 如果你提供了一个程序不支持的flag，那么程序会打印一个错误信息和帮助信息
-```go
+```
 $ ./command-line-flags -wat
 flag provided but not defined: -wat
 Usage of ./go_cmd_flag:

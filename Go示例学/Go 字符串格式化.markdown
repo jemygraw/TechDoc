@@ -91,7 +91,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 {1 2}
 {x:1 y:2}
 main.point{x:1, y:2}

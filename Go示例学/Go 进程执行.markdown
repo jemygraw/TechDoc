@@ -34,7 +34,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 total 16
 drwxr-xr-x  4 mark 136B Oct 3 16:29 .
 drwxr-xr-x 91 mark 3.0K Oct 3 12:50 ..

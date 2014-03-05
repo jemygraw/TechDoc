@@ -39,7 +39,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 Contains:   true
 Count:      2
 HasPrefix:  true

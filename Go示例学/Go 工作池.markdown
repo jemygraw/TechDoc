@@ -43,7 +43,7 @@ func main() {
     }
 ```
 运行结果
-```go
+```
 worker 1 processing job 1
 worker 2 processing job 2
 worker 3 processing job 3

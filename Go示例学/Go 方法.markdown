@@ -46,7 +46,7 @@ func main() {
 
 输出结果为
 
-```go
+```
 area:  50
 perim: 30
 area:  50

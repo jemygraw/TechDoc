@@ -35,7 +35,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 YWJjMTIzIT8kKiYoKSctPUB+
 abc123!?$*&()'-=@~
 

@@ -50,7 +50,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 postgres
 user:pass
 user

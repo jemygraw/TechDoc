@@ -23,7 +23,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 one
 two
 ```

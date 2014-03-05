@@ -29,7 +29,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 passed message
 ```
 其实这个例子就是把信息首先写入pings通道里面，然后在pong函数里面再把信息从pings通道里面读出来再写入pongs通道里面，最后在main函数里面将信息从pongs通道里面读出来。

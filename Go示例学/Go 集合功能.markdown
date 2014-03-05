@@ -96,7 +96,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 2
 false
 true

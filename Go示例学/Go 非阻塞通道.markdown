@@ -43,7 +43,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 no message received
 no message sent
 no activity
@@ -95,7 +95,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 no message received
 sent message hi
 received message hi

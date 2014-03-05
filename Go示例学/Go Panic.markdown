@@ -21,7 +21,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 panic: a problem
 
 goroutine 1 [running]:

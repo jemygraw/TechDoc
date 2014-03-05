@@ -75,7 +75,7 @@ func main() {
 ```
 在运行程序之前，你需要创建一个`/tmp/dat`文件，然后写入一些测试数据。
 运行结果
-```go
+```
 hello world
 i am jemy
 who are you

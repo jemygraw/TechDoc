@@ -40,7 +40,7 @@ func closeFile(f *os.File) {
 }
 ```
 运行结果
-```go
+```
 creating
 writing
 closing

@@ -36,7 +36,7 @@ func main() {
 ```
 输出结果为
 
-```go
+```
 initial: 1
 zeroval: 1
 zeroptr: 0

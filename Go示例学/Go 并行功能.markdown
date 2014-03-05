@@ -38,7 +38,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 direct : 0
 direct : 1
 direct : 2

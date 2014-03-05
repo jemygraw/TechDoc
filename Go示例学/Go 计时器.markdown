@@ -36,7 +36,7 @@ func main() {
 }
 ```
 运行结果
-```go
+```
 Timer 1 expired
 Timer 2 stopped
 ```
