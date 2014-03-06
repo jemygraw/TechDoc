@@ -1,4 +1,4 @@
-＃Go String与Byte切片之间的转换
+#Go String与Byte切片之间的转换
 
 String转换到Byte数组时，每个byte(byte类型其实就是uint8)保存字符串对应字节的数值。
 
