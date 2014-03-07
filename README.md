@@ -1,5 +1,7 @@
 多科学堂
 
+Android App: http://app.xiaomi.com/detail/54217 **Go轻松学**
+
 在此，有多种编程语言的入门教程，让你在最短的时间内上手一门语言。
 
 目前正在进行中的是 **Go Python Java Nodejs**
