@@ -12,8 +12,8 @@
 int
 main(int argc, char *argv[])
 {
-	char		test_array[ARRAY_SIZE] = {'a', '1', '3', 'b', 'd', '4', '0'};
-	int		i;
+	char test_array[ARRAY_SIZE] = {'a', '1', '3', 'b', 'd', '4', '0'};
+	int i;
 	for (i = 0; i < ARRAY_SIZE; i++) {
 		if (isdigit(test_array[i])) {
 			printf("%c", test_array[i]);

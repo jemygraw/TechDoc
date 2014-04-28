@@ -13,7 +13,7 @@
 int
 main(int argc, char *argv[])
 {
-	int		c;
+	int c;
 	while ((c = getchar()) != ';') {
 		if (isalpha(c)) {
 			putchar(c);

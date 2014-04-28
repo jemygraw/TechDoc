@@ -11,7 +11,7 @@
 int
 main(int argc, char *argv[])
 {
-	int		c;
+	int c;
 	c = 'a';
 	printf("%x:%s\n", c, iscntrl(c) ? "yes" : "no");
 	c = 0x0d;

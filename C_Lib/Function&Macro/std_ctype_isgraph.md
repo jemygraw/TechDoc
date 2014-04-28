@@ -12,8 +12,8 @@
 int
 main(int argc, char *argv[])
 {
-	char		test_array[ARRAY_SIZE] = {' ', '\t', 'a', ',', '2', ')', '='};
-	int		i;
+	char test_array[ARRAY_SIZE] = {' ', '\t', 'a', ',', '2', ')', '='};
+	int i;
 	for (i = 0; i < ARRAY_SIZE; i++) {
 		if (isgraph(test_array[i])) {
 			printf("'%c' is graph character\n", test_array[i]);

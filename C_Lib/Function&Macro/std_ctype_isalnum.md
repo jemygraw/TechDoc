@@ -12,7 +12,7 @@
 int
 main(int argc, char *argv[])
 {
-	int		c = 'a';
+	int c = 'a';
 	printf("'%c' -> %d\n", c, isalnum(c));
 	c = '>';
 	printf("'%c' -> %d\n", c, isalnum(c));
