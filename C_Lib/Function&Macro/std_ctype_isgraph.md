@@ -31,4 +31,4 @@ main(int argc, char *argv[])
 '=' is graph character
 ```
 #备注
-这个函数可isprint很相似，唯一的区别是isgraph强调的是可显示的字符，所以不包括那些空格，制表位等。
+可显示字符是除了空白字符(' ')之外的，所有能够被打印出来的字符。相关函数为isprint。
