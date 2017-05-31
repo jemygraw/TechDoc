@@ -10,8 +10,8 @@
 这个题目的一个思路就是：
 
 (1) 先计算1000以下所有能够被3整除的整数的和A，  
-(2) 然后计算1000以下所有能够被5整除的整数和B，  
-(3) 然后再计算1000以下所有能够被3和5整除的整数和C,  
+(2) 然后计算1000以下所有能够被5整除的整数和B，
+(3) 然后再计算1000以下所有能够被3和5整除的整数和C， 
 (4) 使用A+B-C就得到了最后的结果。  
 
 按照上面的方法，传统的方法当然就是一步一步计算，然后再到第(4)步汇总了。
@@ -22,37 +22,43 @@
 
 先看例子：
 
-	package main
+```
+package main
 
-	import (
-		"fmt"
-		"time"
-	)
+import (
+	"fmt"
+	"time"
+)
 
-	func get_sum_of_divisible(num int, divider int, resultChan chan int) {
-		sum := 0
-		for value := 0; value < num; value++ {
-			if value%divider == 0 {
-				sum += value
-			}
+func get_sum_of_divisible(num int, divider int, resultChan chan int) {
+	sum := 0
+	for value := 0; value < num; value++ {
+		if value%divider == 0 {
+			sum += value
 		}
-		resultChan <- sum
 	}
+	resultChan <- sum
+}
 
-	func main() {
-		LIMIT := 1000
-		resultChan := make(chan int, 3)
-		t_start := time.Now()
-		go get_sum_of_divisible(LIMIT, 3, resultChan)
-		go get_sum_of_divisible(LIMIT, 5, resultChan)
-		go get_sum_of_divisible(LIMIT, 15, resultChan)
+func main() {
+	LIMIT := 10
+	resultChan := make(chan int, 3)
+	t_start := time.Now()
+	go get_sum_of_divisible(LIMIT, 3, resultChan)
+	go get_sum_of_divisible(LIMIT, 5, resultChan)
+	//这里其实那个是被3整除，哪个是被5整除看具体调度方法，不过由于是求和，所以没关系
+	sum3, sum5 := <-resultChan, <-resultChan
 
-		sum3, sum5, sum15 := <-resultChan, <-resultChan, <-resultChan
-		sum := sum3 + sum5 - sum15
-		t_end := time.Now()
-		fmt.Println(sum)
-		fmt.Println(t_end.Sub(t_start))
-	}
+	//单独算被15整除的
+	go get_sum_of_divisible(LIMIT, 15, resultChan)
+	sum15 := <-resultChan
+
+	sum := sum3 + sum5 - sum15
+	t_end := time.Now()
+	fmt.Println(sum)
+	fmt.Println(t_end.Sub(t_start))
+}
+```
 
 (1) 在上面的例子中，我们首先定义了一个普通的函数get_sum_of_divisible，这个函数的`最后一个参数是一个整型chan类型`，这种类型，你可以把它当作一个先进先出的队列。你可以`向它写入数据`，也可以`从它读出数据`。它`所能接受的数据类型`就是`由chan关键字后面的类型所决定`的。在上面的例子中，我们使用`<-`运算符将函数计算的结果写入channel。channel是go提供的用来协程之间通信的方式。本例中main是一个协程，三个get_sum_of_divisible调用是协程。要在这四个协程间通信，必须有一种可靠的手段。
 
@@ -64,7 +70,7 @@
 
 好了，上面的例子看完，我们来详细讲解Go的并行计算。
 
-**Goroutine协程**
+**Go Routine 协程**
 
 所谓协程，就是Go提供的轻量级的独立运算过程，比线程还轻。创建一个协程很简单，就是go关键字加上所要运行的函数。看个例子：
 
