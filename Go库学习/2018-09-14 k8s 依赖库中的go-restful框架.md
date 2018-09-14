@@ -5,7 +5,7 @@
 
 这里我们将它简单翻译一下，帮助大家学习。下面的内容是译文。
 
--------
+---
 
 在前面的一个帖子里面，我介绍了用 Google 的 Go 语言开发的，用来构建 REST 风格 WebService 的包 go-restful 的设计。
 今天，我完成了这个包的实现，包含如下的功能：
@@ -160,10 +160,9 @@ $ curl http://localhost:9090/users -X POST -d '{"Id":"32","Name":"jemygraw"}' -H
  "Name": "jemygraw"
 }
 ```
-
--------
+---
 
 译者：
 
-本文永久保存地址为：
+本文永久保存地址为：https://github.com/jemygraw/TechDoc/blob/master/Go%E5%BA%93%E5%AD%A6%E4%B9%A0/2018-09-14%20k8s%20%E4%BE%9D%E8%B5%96%E5%BA%93%E4%B8%AD%E7%9A%84go-restful%E6%A1%86%E6%9E%B6.md
 
