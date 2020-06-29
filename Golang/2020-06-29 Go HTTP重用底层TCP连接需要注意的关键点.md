@@ -1,6 +1,6 @@
 # Go HTTP 重用底层TCP连接需要注意的关键点
 
-## 前沿
+## 前言
 
 在写这篇文章之前，我在社区搜索了一下，找到了一个相关的帖子 [can't assign requested address 错误解决](https://gocn.vip/topics/8470)，还是 @astaxie 自己写的。当然这里我之所以重复再写一个新帖子，是希望给大家提供一种新的验证的方式。
 
