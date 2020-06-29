@@ -87,7 +87,7 @@ if resp.StatusCode == http.StatusOK {
 Body io.ReadCloser
 ```
 
-其中提到了必须将 `http.Response` 的 `Body` 读取完毕并且关闭后，才会重试底层的 TCP 连接。
+其中提到了必须将 `http.Response` 的 `Body` 读取完毕并且关闭后，才会重用底层的 TCP 连接。
 
 ## 实验 
 
@@ -109,8 +109,9 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-		defer resp.Body.Close()
+
 		io.Copy(ioutil.Discard, resp.Body)
+		resp.Body.Close()
 	}
 }
 ```
@@ -133,8 +134,9 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-		defer resp.Body.Close()
+
 		//io.Copy(ioutil.Discard, resp.Body)
+		resp.Body.Close()
 	}
 }
 ```
