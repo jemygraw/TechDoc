@@ -115,7 +115,7 @@ func main() {
 }
 ```
 
-![images/tcp_reuse_yes.png](images/tcp_reuse_yes.png)
+![images/tcp_reuse_yes.png](./images/tcp_reuse_yes.png)
 
 ### 未重用TCP连接
 
@@ -139,7 +139,7 @@ func main() {
 }
 ```
 
-![images/tcp_reuse_no.png](images/tcp_reuse_no.png)
+![images/tcp_reuse_no.png](./images/tcp_reuse_no.png)
 
 ## 小结
 
